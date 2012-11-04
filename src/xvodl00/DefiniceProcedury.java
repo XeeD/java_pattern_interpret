@@ -16,6 +16,7 @@ public class DefiniceProcedury implements IProcedura {
     public DefiniceProcedury(Identifikator identifikátor, PosloupnostPrikazu posloupnostPříkazů) {
         this.identifikátor = identifikátor;
         this.posloupnostPříkazů = posloupnostPříkazů;
+        DefinovaneProcedury.přidejDefinici(identifikátor, this);
     }
 
     @Override

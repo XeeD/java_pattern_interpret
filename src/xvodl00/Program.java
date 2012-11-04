@@ -85,45 +85,73 @@ public class Program {
      * Testovací metoda.
      */
     public static void test() {
-        Program pgm = new Program(
-                new PosloupnostPrikazu(new IPrikaz[]{new Opakovani(4,
-                    new PosloupnostPrikazu(new IPrikaz[]{
-                        AtomickaProcedura.krok,
-                        AtomickaProcedura.vlevoVbok,}))}));
-
+        // Zde je definována vnitřní reprezentace programu
         PosloupnostPrikazu posl = new PosloupnostPrikazu(AtomickaProcedura.krok);
 
+        // Definice jendnoduché funkce "neníZeď"
+        // - funkce obrací logiku Atomické funkce jeZeď pomocí podmínky
+        //   se dvěmi větvemi
         DefiniceFunkce funkce = new DefiniceFunkce(
                 new Identifikator("neníZeď"),
                 new PosloupnostPrikazu(new Podminka(
-                AtomickaFunkce.jeZeď,
-                new PosloupnostPrikazu(new ReturnHodnotu(false)), // pokud je před robotem zeď - vrátí false
-                new PosloupnostPrikazu(new ReturnHodnotu(true))))); // jinak vrátí
+                    AtomickaFunkce.jeZeď,
+                    new PosloupnostPrikazu(new ReturnHodnotu(false)), // pokud je před robotem zeď - vrátí false
+                    new PosloupnostPrikazu(new ReturnHodnotu(true))
+                ))); // jinak vrátí
         
+        
+        // Funkci vyhledáme pomocí jejího identifikátoru
+        // - zkusíme vytvořit nový identifikátor a se stejnou hodntou
+        //   a dle něj hledáme.
         DefiniceFunkce fNeníZeď = DefinovaneFunkce.getDefinice(new Identifikator("neníZeď"));
 
         Program pgm2 = new Program(
+                // Hlavní posloupnost příkazů
                 new PosloupnostPrikazu(
+                    // While smyčka - hledáme v bludišti značku
                     new While(
+                        // Dokud před námi není značka, tak hledáme dále.
                         AtomickaFunkce.neníZnačka,
+                        
+                        // Příkazy prováděné ve smyčce
                         new PosloupnostPrikazu(
+                            // Vnořené while
                             new While(
+                                // zde používáme odkaz na dříve vytvořenou funkci "neníZeď"
                                 fNeníZeď,
+                                // Pokud jsme nenarazili na zeď, tak jdeme dále
                                 new PosloupnostPrikazu(
                                     AtomickaProcedura.krok,
+                                    // Podmínka - pokud jsme na rozcestí, tak vybereme náhodný směr
                                     new Podminka(
                                         AtomickaFunkce.jeRozcestí,
                                         new PosloupnostPrikazu(AtomickaProcedura.náhodnýSměrBezZdi)
                                     )
                                 )
                             ),
+                            // Došli jsme na konec "chodby", je třeba vybrat jiný náhodný směr
                             AtomickaProcedura.náhodnýSměrBezZdi
                         )),
-                    AtomickaProcedura.krok
+                    // Jdeme na značku a končíme
+                    AtomickaProcedura.krok,
+                    AtomickaProcedura.zvedni
                 ));
 
         //IO.zpráva("Připraveno");
         pgm2.proveď();
+    }
+    
+    /**
+     * Tato funkce definuje vnitřní reprezentaci programu "Bludička"
+     * a spustí ji.
+     */
+    public static void testBliudička() {
+        Program pgm = new Program(
+                new PosloupnostPrikazu(new IPrikaz[]{new Opakovani(4,
+                    new PosloupnostPrikazu(new IPrikaz[]{
+                        AtomickaProcedura.krok,
+                        AtomickaProcedura.vlevoVbok,}))}));
+        pgm.proveď();
     }
 
     /**

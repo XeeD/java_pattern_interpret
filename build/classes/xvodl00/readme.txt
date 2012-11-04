@@ -51,3 +51,4 @@ $ Procedura
 #§
 
 
+Zápis programu z 

@@ -2,17 +2,21 @@ package xvodl00;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import robot.cz.Robot;
 
 /**
  * *****************************************************************************
- * Instance třídy <b><code>AtomickáProcedura</code></b> předtavují ...
+ * Instance třídy <b><code>AtomickaProcedura</code></b> předtavují jednoduché
+ * akce, které může námi nasazený robot provést. Jsou jediným způsobem, kterým
+ * může námi vytvořený program "komunikovat" navenek - tj. ovládat robota.
+ * 
+ * Pokud je však spojíme s dalším prvky námi definované gramatiky, tak můžeme
+ * vytvářet i složitější programy, jak je ukázáno v testovací metodě v třídě
+ * <code>Program</code>.
  *
- * @author jméno autora
- * @version 0.00.000, 0.0.2008
+ * @author Lukáš Voda (xvodl00)
  */
 public enum AtomickaProcedura implements IProcedura {
 
