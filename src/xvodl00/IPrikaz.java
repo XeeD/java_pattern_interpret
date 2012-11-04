@@ -1,22 +1,12 @@
 package xvodl00;
 
-
-/*******************************************************************************
- * Instance rozhraní <b><code>IPříkaz</code><b> představují ...
- *
- * @author    jméno autora
- * @version   0.00.000,  0.0.2008
+/**
+ * Instance rozhraní <b><code>IPříkaz</code><b> představují jednotlivé příkazy,
+ * tak jak jsou definovány v gramatice jazyka.
+ * 
+ * @author Lukáš Voda (xvodl00)
  */
-public interface IPrikaz
-{
-//== KONSTANTY =================================================================
-//== METODY ====================================================================
+public interface IPrikaz {
 
-    /***************************************************************************
-     *
-     */
     public void proveď() throws Skok;
-
-
-//== VNOŘENÉ TŘÍDY =============================================================
 }

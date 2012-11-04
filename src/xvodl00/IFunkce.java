@@ -1,15 +1,20 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package xvodl00;
 
 /**
- *
- * @author XeeD
+ * Rozhraní, které implementují funkce, které vrací hodnotu. V definované
+ * gramatice je rozdíl mezi procedurou a funkcí - funkce vrací hodnotu,
+ * procedury nemají žádnou návratovou hodnotu.
+ * 
+ * @author Lukšá Voda (xvodl00)
  */
 public interface IFunkce {
     
+    /**
+     * Tato metoda je volána při provádění smyčky While a v Podmínkách.
+     * 
+     * @return návratová pravdivostní hodnota definované funkce
+     * @throws Skok
+     */
     public boolean jePravda() throws Skok;
     
 }

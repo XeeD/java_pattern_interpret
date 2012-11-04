@@ -8,7 +8,9 @@ package xvodl00;
  * instanci této třídy a následně zpracována tak, aby funkce vrátila danou danou
  * hodnotu jako svou návratovou hodnotu.
  *
- * Funkce má definovanou metodu
+ * Funkce má definovanou metodu <code>jePravda()</code>, která je volána
+ * v místě použití funcke - tedy v příkazech <code>While</code>
+ * a <code>Podmíka</code>.
  *
  * @author Lukáš Voda (xvodl00)
  */

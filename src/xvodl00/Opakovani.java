@@ -2,10 +2,10 @@ package xvodl00;
 
 /**
  * *****************************************************************************
- * Instance třídy <b><code>Opakování</code></b> předtavují ...
+ * Instance třídy <b><code>Opakování</code></b> předtavují implementaci
+ * smyčky <code>for</code>, která je definovaná v gramatice jazyka.
  *
- * @author jméno autora
- * @version 0.00.000, 0.0.2008
+ * @author Lukáš Voda (xvodl00)
  */
 public class Opakovani implements IPrikaz {
 //== KONSTANTNÍ ATRIBUTY TŘÍDY =================================================
