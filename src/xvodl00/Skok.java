@@ -1,13 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package xvodl00;
 
 /**
+ * Výjimka, která slouží pro řízení běhu programu. Programy vyhazují instance
+ * jejích potomků, které jsou pak zachyceny na správných místech programu, nebo
+ * probublají až na povrch a jsou reportovány jako chyby.
  *
  * @author XeeD
  */
-public class Skok extends Exception {
-    
+abstract public class Skok extends Exception {
 }

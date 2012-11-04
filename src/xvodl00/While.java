@@ -1,12 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package xvodl00;
 
 /**
  *
- * @author XeeD
+ * @author Lukáš Voda (xvodl00)
  */
 public class While implements IPrikaz {
     

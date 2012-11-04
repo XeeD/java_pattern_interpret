@@ -4,11 +4,17 @@ import robot.cz.Robot;
 import rup.česky.společně.IO;
 
 /**
- * *****************************************************************************
- * Instance třídy <b><code>Program</code></b> předtavují ...
+ * Instance třídy <b><code>Program</code></b> předtavují zřetězené příkazy,
+ * které je možno předávat dalším příkazům. Můžeme tak například definovat
+ * například část sekvenci příkazů, které jsou předány smyčce While.
+ * 
+ * PosloupnostPrikazu se liší od DefiniceProcedury tím, že nemá jméno (nelze
+ * je tedy volat) a není možné ji přerušit pomocí příkazu <code>Return</code>.
+ * 
+ * PosloupnostPrikazu však může příkazy <code>Return</code> obsahovat,
+ * pokud je použita v definici procedury, která tyto příkazy umí "odchytit".
  *
- * @author jméno autora
- * @version 0.00.000, 0.0.2008
+ * @author Lukáš Voda (xvodl00)
  */
 public class PosloupnostPrikazu implements IPrikaz {
 //== KONSTANTNÍ ATRIBUTY TŘÍDY =================================================

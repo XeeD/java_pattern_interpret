@@ -1,17 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package xvodl00;
 
 /**
+ * 
  *
- * @author XeeD
+ * @author Lukáš Voda (xvodl00)
  */
 public class ReturnHodnotu implements IPrikaz {
-    
+
     final private boolean hodnota;
-    
+
     public ReturnHodnotu(boolean hodnota) {
         this.hodnota = hodnota;
     }
@@ -24,5 +21,4 @@ public class ReturnHodnotu implements IPrikaz {
             throw new SkokReturnFalse();
         }
     }
-    
 }

@@ -1,14 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package xvodl00;
 
 import robot.cz.Robot;
 
 /**
- * *****************************************************************************
- * Instance třídy <b><code>Program</code></b> předtavují ...
+ * Instance třídy <b><code>Program</code></b> předtavují vnitřní reprezentac.
  *
  * @author jméno autora
  * @version 0.00.000, 0.0.2008
