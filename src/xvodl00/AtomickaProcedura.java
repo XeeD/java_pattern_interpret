@@ -81,6 +81,23 @@ public enum AtomickaProcedura implements IProcedura {
             
             robot.setSmer(novýSměr);
         }
+    },
+    náhodnýSměrBezZdiNeZpět {
+        @Override
+        public void proveď() throws Skok {
+            Robot robot = Program.getRobot();
+            List<Integer> volnéSměry = robot.getVolnéSměry();
+
+            Integer opačnýSměr = (robot.getSmer() + (Robot.SMERU / 2)) % Robot.SMERU;
+            if (volnéSměry.size() > 1) {
+                // Pokud máme více východů, něž směr zpět, tak nepůjdeme zpět
+                volnéSměry.remove(opačnýSměr);
+            }
+            
+            Random random = new Random();
+            int novýSměr = volnéSměry.get(random.nextInt(volnéSměry.size()));
+            robot.setSmer(novýSměr);
+        }
     };
 //== KONSTANTNÍ ATRIBUTY TŘÍDY =================================================
 //== PROMĚNNÉ ATRIBUTY TŘÍDY ===================================================

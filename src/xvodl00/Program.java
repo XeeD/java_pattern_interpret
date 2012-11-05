@@ -16,15 +16,15 @@ public class Program {
 
     static {
         String[] world$ = {
-            "00000000000000",
-            "0##0#########0",
-            "###0######00#0",
-            "0#000000g####0",
-            "0############0",
-            "0#00#0#0000##0",
-            "0##0#000##0##0",
-            "00000#0###0##0",
-            "0###000##00000"
+            "000#0###000000",
+            "0#0000000#0##0",
+            "##0#######00#0",
+            "0#000000g##0#0",
+            "0##########0#0",
+            "0#00#0#000#000",
+            "0##0#000#0#0##",
+            "00000#0##0#000",
+            "0###000#0000#0"
         };
         Robot.pripravDvorek(world$);
     }
@@ -120,16 +120,15 @@ public class Program {
                                     // Podmínka - pokud jsme na rozcestí, tak vybereme náhodný směr
                                     new Podminka(
                                         AtomickaFunkce.jeRozcestí,
-                                        new PosloupnostPrikazu(AtomickaProcedura.náhodnýSměrBezZdi)
+                                        new PosloupnostPrikazu(AtomickaProcedura.náhodnýSměrBezZdiNeZpět)
                                     )
                                 )
                             ),
                             // Došli jsme na konec "chodby", je třeba vybrat jiný náhodný směr
-                            AtomickaProcedura.náhodnýSměrBezZdi
+                            AtomickaProcedura.náhodnýSměrBezZdiNeZpět
                         )),
                     // Jdeme na značku a končíme
-                    AtomickaProcedura.krok,
-                    AtomickaProcedura.zvedni
+                    AtomickaProcedura.krok
                 ));
 
         //IO.zpráva("Připraveno");
