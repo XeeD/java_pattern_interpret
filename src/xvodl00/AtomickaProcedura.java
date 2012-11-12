@@ -32,6 +32,12 @@ public enum AtomickaProcedura implements IProcedura {
             Program.getRobot().vlevoVbok();
         }
     },
+    vpravoVbok {
+        @Override
+        public void proveď() throws Skok {
+            Program.getRobot().vpravoVbok();
+        }
+    },
     poloz {
         @Override
         public void proveď() throws Skok {

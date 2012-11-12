@@ -94,13 +94,24 @@ public class Program {
                     new PosloupnostPrikazu(new ReturnHodnotu(true))
                 ))); // jinak vrátí
         
+        DefiniceProcedury procedura = new DefiniceProcedury(
+                new Identifikator("vítěznýTanec"),
+                new PosloupnostPrikazu(
+                    new Opakovani(4, new PosloupnostPrikazu(AtomickaProcedura.vlevoVbok)),
+                    new Opakovani(4, new PosloupnostPrikazu(AtomickaProcedura.vpravoVbok))
+                )
+            );
+        
         
         // Funkci vyhledáme pomocí jejího identifikátoru
         // - zkusíme vytvořit nový identifikátor a se stejnou hodntou
         //   a dle něj hledáme.
         DefiniceFunkce fNeníZeď = DefinovaneFunkce.getDefinice(new Identifikator("neníZeď"));
+        
+        // Vyhledáme definovanou proceduru
+        DefiniceProcedury pVítěznýTanec = DefinovaneProcedury.getDefinice(new Identifikator("vítěznýTanec"));
 
-        Program pgm2 = new Program(
+        Program program = new Program(
                 // Hlavní posloupnost příkazů
                 new PosloupnostPrikazu(
                     // While smyčka - hledáme v bludišti značku
@@ -128,11 +139,12 @@ public class Program {
                             AtomickaProcedura.náhodnýSměrBezZdiNeZpět
                         )),
                     // Jdeme na značku a končíme
-                    AtomickaProcedura.krok
+                    AtomickaProcedura.krok,
+                    pVítěznýTanec
                 ));
 
         //IO.zpráva("Připraveno");
-        pgm2.proveď();
+        program.proveď();
     }
     
     /**
