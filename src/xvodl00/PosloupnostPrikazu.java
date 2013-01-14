@@ -1,7 +1,6 @@
 package xvodl00;
 
 import robot.cz.Robot;
-import rup.česky.společně.IO;
 
 /**
  * Instance třídy <b><code>Program</code></b> předtavují zřetězené příkazy,
@@ -64,7 +63,6 @@ public class PosloupnostPrikazu implements IPrikaz {
                     AtomickaProcedura.krok,
                     AtomickaProcedura.vlevoVbok,
                     AtomickaProcedura.krok,});
-        IO.zpráva("Připraveno");
         try {
             pgm.proveď();
         } catch (Skok skok) {
